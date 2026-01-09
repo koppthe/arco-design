@@ -284,6 +284,33 @@ interface RangePickerProps {
 
 ### 4. Select 新增 Props
 
+**autoWidth 支持** (v2.54.0+):
+
+```typescript
+interface SelectProps {
+  autoWidth?: boolean | {
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+  };
+  // ...
+}
+```
+
+**使用示例**:
+```typescript
+// 简单用法 - 自适应宽度
+<Select autoWidth options={options} />
+
+// 高级用法 - 限制最小和最大宽度
+<Select
+  autoWidth={{
+    minWidth: 100,
+    maxWidth: 300,
+  }}
+  options={options}
+/>
+```
+
 **maxTagCount 支持** (v2.63.0+):
 
 ```typescript
@@ -398,7 +425,34 @@ interface InputNumberProps {
 
 ---
 
-### 9. Input 新增事件支持
+### 9. Input 新增 Props 和事件支持
+
+**autoWidth 支持** (v2.54.0+):
+
+```typescript
+interface InputProps {
+  autoWidth?: boolean | {
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+  };
+  // ...
+}
+```
+
+**使用示例**:
+```typescript
+// 简单用法 - 自适应宽度
+<Input autoWidth placeholder="输入内容" />
+
+// 高级用法 - 设置最小和最大宽度
+<Input
+  autoWidth={{
+    minWidth: 100,
+    maxWidth: 300,
+  }}
+  placeholder="输入内容"
+/>
+```
 
 **onCompositionEvent** (v2.61.0+):
 
@@ -647,12 +701,12 @@ export type { NotificationHookReturnType } from './Notification/interface';
 | **Carousel** | - | `indicatorPosition` 新增 'outer-right' | v2.56.0+ |
 | **ColorPicker** | 整个组件为新增 | - | v2.47.0+ |
 | **DatePicker** | `inputProps`, `fixedTime` | - | v2.60.0+ |
-| **Select** | `maxTagCount` | - | v2.63.0+ |
+| **Select** | `autoWidth`, `maxTagCount` | - | v2.54.0+, v2.63.0+ |
 | **Image** | `renderImages`, `imageRender` | - | v2.57.0+ |
 | **Typography** | `tooltipProps` | - | v2.56.0+ |
 | **InputTag** | `maxTagCount` | - | v2.57.0+ |
 | **InputNumber** | - | `onChange` 新增 reason 参数 | v2.61.0+ |
-| **Input** | `onCompositionStart/Update/End` | - | v2.61.0+ |
+| **Input** | `autoWidth`, `onCompositionStart/Update/End` | - | v2.54.0+, v2.61.0+ |
 | **Menu** | `onEllipsisChange` | - | v2.56.0+ |
 | **Slider** | - | `value` 支持数组（多点） | v2.61.0+ |
 | **Tree** | `animation` | - | v2.66.0+ |

@@ -174,6 +174,15 @@ indicatorPosition?: 'bottom' | 'top' | 'left' | 'right' | 'outer' | 'outer-right
 ### 5. Select（选择器）
 
 **新增 Props**:
+- `autoWidth` (v2.54.0): 设置宽度自适应
+  ```typescript
+  autoWidth?: boolean | {
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+  }
+  ```
+  - 与 Input 的 autoWidth 功能相同
+  - minWidth 默认为 0，maxWidth 默认为 100%
 - `maxTagCount` (v2.63.0): 支持最大标签数量
 - 新增 `popover` 属性用于自定义超出标签的弹出框 (v2.66.0+)
 
@@ -188,6 +197,7 @@ indicatorPosition?: 'bottom' | 'top' | 'left' | 'right' | 'outer' | 'outer-right
 **影响评估**: ⚠️ 中等
 - 如果 override 了 Select 的字体样式，需要检查大尺寸的显示
 - 使用 allowCreate 的场景需要重新测试
+- autoWidth 功能可以用于优化表单布局
 
 ### 6. DatePicker（日期选择器）
 
@@ -258,16 +268,32 @@ indicatorPosition?: 'bottom' | 'top' | 'left' | 'right' | 'outer' | 'outer-right
 
 ### 13. Input（输入框）
 
+**新增 Props**:
+- `autoWidth` (v2.54.0): 设置宽度自适应
+  ```typescript
+  autoWidth?: boolean | {
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+  }
+  ```
+  - 简单用法：`<Input autoWidth />` 
+  - 高级用法：`<Input autoWidth={{ minWidth: 100, maxWidth: 300 }} />`
+  - minWidth 默认为 0，maxWidth 默认为 100%
+
+**新增事件**:
+- 支持 `onCompositionStart/Update/End` (v2.61.0): 处理中文输入法事件
+
 **新增特性**:
-- 支持 `onCompositionEvent` (v2.61.0)
 - 修复不能同时使用 `suffix` 和 `addAfter` 的问题 (v2.63.1)
 - Input.TextArea 可以接受 ConfigProvider.componentConfig 的 props (v2.66.9)
 
 **样式修复**:
 - 修复 Safari 中清除文本时的垂直抖动 (v2.53.0)
+- 修复 autoWidth 计算问题 (v2.61.1)
 
 **影响评估**: ⚠️ 低-中等
 - 如果之前因为 bug 而调整了样式或用法，需要重新检查
+- autoWidth 功能可以用于优化表单布局
 
 ### 14. ConfigProvider（全局配置）
 

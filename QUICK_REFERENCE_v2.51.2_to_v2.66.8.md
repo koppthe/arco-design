@@ -210,7 +210,36 @@ import { Watermark } from '@arco-design/web-react';
 
 ---
 
-### 2. Select maxTagCount
+### 2. Input/Select autoWidth
+
+**用途**：输入框和选择器宽度自适应
+
+```tsx
+// 简单用法
+<Input autoWidth placeholder="输入内容" />
+<Select autoWidth options={options} />
+
+// 高级用法 - 限制最小和最大宽度
+<Input
+  autoWidth={{
+    minWidth: 100,
+    maxWidth: 300,
+  }}
+  placeholder="输入内容"
+/>
+
+<Select
+  autoWidth={{
+    minWidth: 150,
+    maxWidth: 400,
+  }}
+  options={options}
+/>
+```
+
+---
+
+### 3. Select maxTagCount
 
 **用途**：限制多选标签显示数量
 
@@ -234,7 +263,7 @@ import { Watermark } from '@arco-design/web-react';
 
 ---
 
-### 3. Typography tooltipProps
+### 4. Typography tooltipProps
 
 **用途**：自定义省略号 tooltip
 
@@ -254,7 +283,7 @@ import { Watermark } from '@arco-design/web-react';
 
 ---
 
-### 4. Cascader 自定义图标
+### 5. Cascader 自定义图标
 
 **用途**：自定义级联选择器图标
 
@@ -272,7 +301,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 5. Input 输入法事件
+### 6. Input 输入法事件
 
 **用途**：处理中文输入法
 
@@ -285,7 +314,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 6. InputNumber onChange reason
+### 7. InputNumber onChange reason
 
 **用途**：区分输入来源
 
@@ -300,7 +329,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 7. Menu onEllipsisChange
+### 8. Menu onEllipsisChange
 
 **用途**：监听水平菜单省略状态
 
@@ -315,7 +344,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 8. Slider 多点支持
+### 9. Slider 多点支持
 
 **用途**：多个滑块点
 
@@ -328,7 +357,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 9. Tree animation
+### 10. Tree animation
 
 **用途**：禁用树形控件动画
 
@@ -338,7 +367,7 @@ import { IconLoading, IconCheck, IconRight } from '@arco-design/web-react/icon';
 
 ---
 
-### 10. Upload method
+### 11. Upload method
 
 **用途**：自定义 HTTP 方法
 
